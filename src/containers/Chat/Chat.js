@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
+import './Chat.scss';
 
 @connect(
   state => ({user: state.auth.user})
@@ -50,12 +51,11 @@ export default class Chat extends Component {
   }
 
   render() {
-    const style = require('./Chat.scss');
     const {user} = this.props;
 
     return (
-      <div className={style.chat + ' container'}>
-        <h1 className={style}>Chat</h1>
+      <div className="chat container">
+        <h1>Chat</h1>
 
         {user &&
         <div>

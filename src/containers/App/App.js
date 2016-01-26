@@ -12,6 +12,7 @@ import { InfoBar } from 'components';
 import { pushState } from 'redux-router';
 import connectData from 'helpers/connectData';
 import config from '../../config';
+import './App.scss';
 
 function fetchData(getState, dispatch) {
   const promises = [];
@@ -57,16 +58,15 @@ export default class App extends Component {
 
   render() {
     const {user} = this.props;
-    const styles = require('./App.scss');
 
     return (
-      <div className={styles.app}>
+      <div className="app">
         <Helmet {...config.app.head}/>
         <Navbar fixedTop>
           <Navbar.Header>
             <Navbar.Brand>
               <IndexLink to="/" activeStyle={{color: '#33e0ff'}}>
-                <div className={styles.brand}/>
+                <div className="brand"/>
                 <span>{config.app.title}</span>
               </IndexLink>
             </Navbar.Brand>
@@ -101,7 +101,7 @@ export default class App extends Component {
               </LinkContainer>}
             </Nav>
             {user &&
-            <p className={styles.loggedInMessage + ' navbar-text'}>Logged in as <strong>{user.name}</strong>.</p>}
+            <p className="loggedInMessage navbar-text">Logged in as <strong>{user.name}</strong>.</p>}
             <Nav navbar pullRight>
               <NavItem eventKey={1} target="_blank" title="View on Github" href="https://github.com/erikras/react-redux-universal-hot-example">
                 <i className="fa fa-github"/>
@@ -110,7 +110,7 @@ export default class App extends Component {
           </Navbar.Collapse>
         </Navbar>
 
-        <div className={styles.appContent}>
+        <div className="appContent">
           {this.props.children}
         </div>
         <InfoBar/>

@@ -3,18 +3,18 @@ import { Link } from 'react-router';
 import { CounterButton, GithubButton } from 'components';
 import config from '../../config';
 import Helmet from 'react-helmet';
+import './Home.scss';
 
 export default class Home extends Component {
   render() {
-    const styles = require('./Home.scss');
     // require the logo image both from client and server
     const logoImage = require('./logo.png');
     return (
-      <div className={styles.home}>
+      <div className="home">
         <Helmet title="Home"/>
-        <div className={styles.masthead}>
+        <div className="masthead">
           <div className="container">
-            <div className={styles.logo}>
+            <div className="logo">
               <p>
                 <img src={logoImage}/>
               </p>
@@ -24,7 +24,7 @@ export default class Home extends Component {
             <h2>{config.app.description}</h2>
 
             <p>
-              <a className={styles.github} href="https://github.com/erikras/react-redux-universal-hot-example"
+              <a className="github" href="https://github.com/erikras/react-redux-universal-hot-example"
                  target="_blank">
                 <i className="fa fa-github"/> View on Github
               </a>
@@ -42,14 +42,14 @@ export default class Home extends Component {
                           height={30}
                           count large/>
 
-            <p className={styles.humility}>
+            <p className="humility">
               Created and maintained by <a href="https://twitter.com/erikras" target="_blank">@erikras</a>.
             </p>
           </div>
         </div>
 
         <div className="container">
-          <div className={styles.counterContainer}>
+          <div className="counterContainer">
             <CounterButton multireducerKey="counter1"/>
             <CounterButton multireducerKey="counter2"/>
             <CounterButton multireducerKey="counter3"/>
@@ -72,13 +72,6 @@ export default class Home extends Component {
             <li><a href="http://webpack.github.io/docs/webpack-dev-middleware.html" target="_blank">Webpack Dev Middleware</a>
             </li>
             <li><a href="https://github.com/glenjamin/webpack-hot-middleware" target="_blank">Webpack Hot Middleware</a></li>
-            <li><a href="https://github.com/rackt/redux" target="_blank">Redux</a>'s futuristic <a
-              href="https://facebook.github.io/react/blog/2014/05/06/flux.html" target="_blank">Flux</a> implementation
-            </li>
-            <li><a href="https://github.com/gaearon/redux-devtools" target="_blank">Redux Dev Tools</a> for next
-              generation DX (developer experience).
-              Watch <a href="https://www.youtube.com/watch?v=xsSnOQynTHs" target="_blank">Dan Abramov's talk</a>.
-            </li>
             <li><a href="https://github.com/rackt/redux-router" target="_blank">Redux Router</a> Keep
               your router state in your Redux store
             </li>
@@ -111,7 +104,7 @@ export default class Home extends Component {
             <dt>Server-side data loading</dt>
             <dd>
               The <Link to="/widgets">Widgets page</Link> demonstrates how to fetch data asynchronously from
-              some source that is needed to complete the server-side rendering. <code>Widgets.js</code>'s
+              some source that is needed to complete the server-side rendering. <code>Widgets.js</code>s
               <code>fetchData()</code> function is called before the widgets page is loaded, on either the server
               or the client, allowing all the widget data to be loaded and ready for the page to render.
             </dd>
@@ -131,7 +124,7 @@ export default class Home extends Component {
             <dd>
               After you log in, you will be redirected to a Login Success page. This <strike>magic</strike> logic
               is performed in <code>componentWillReceiveProps()</code> in <code>App.js</code>, but it could
-              be done in any component that listens to the appropriate store slice, via Redux's <code>@connect</code>,
+              be done in any component that listens to the appropriate store slice, via Reduxs <code>@connect</code>,
               and pulls the router from the context.
             </dd>
             <dt>Auth-required views</dt>
@@ -160,7 +153,7 @@ export default class Home extends Component {
             I cobbled this together from a wide variety of similar "starter" repositories. As I post this in June 2015,
             all of these libraries are right at the bleeding edge of web development. They may fall out of fashion as
             quickly as they have come into it, but I personally believe that this stack is the future of web development
-            and will survive for several years. I'm building my new projects like this, and I recommend that you do,
+            and will survive for several years. Im building my new projects like this, and I recommend that you do,
             too.
           </p>
 
