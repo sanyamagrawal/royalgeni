@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Helmet from 'react-helmet';
-import {VendorSelect} from 'components';
+import {VendorData, VendorSelect} from 'components';
 
 export default class About extends Component {
   render() {
@@ -9,6 +9,7 @@ export default class About extends Component {
         <h1>Vendor Select</h1>
         <Helmet title="Vendor"/>
         <VendorSelect />
+        <VendorData />
       </div>
     );
   }
