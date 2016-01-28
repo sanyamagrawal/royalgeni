@@ -1,7 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
 import { serviceList } from './VendorConfig';
-import './Select.scss';
 
 class VendorSelect extends React.Component {
 
@@ -18,6 +17,7 @@ class VendorSelect extends React.Component {
 	}
 
 	render() {
+		require('./Select.scss');
 		return (
 			<div className="section">
 				<Select simpleValue

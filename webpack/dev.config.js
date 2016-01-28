@@ -8,7 +8,6 @@ var WebpackIsomorphicTools = require('webpack-isomorphic-tools');
 var assetsPath = path.resolve(__dirname, '../static/dist');
 var host = (process.env.HOST || 'localhost');
 var port = parseInt(process.env.PORT) + 1 || 3001;
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 // https://github.com/halt-hammerzeit/webpack-isomorphic-tools
 var WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
@@ -67,8 +66,8 @@ module.exports = {
     loaders: [
       { test: /\.jsx?$/, exclude: /node_modules/, loaders: ['babel?' + JSON.stringify(babelLoaderQuery), 'eslint-loader']},
       { test: /\.json$/, loader: 'json-loader' },
-      { test: /\.css$/,  loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap')},
-      { test: /\.scss$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!sass-loader?sourceMap') },
+      { test: /\.css$/, loader: 'style-loader!css-loader'},
+      { test: /\.scss$/, loader: 'style!css?importLoaders=2&sourceMap!autoprefixer?browsers=last 2 version!sass?outputStyle=expanded&sourceMap' },
       { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
       { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
       { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" },
@@ -88,7 +87,6 @@ module.exports = {
   plugins: [
     // hot reload
     new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin('[name].css'),
     new webpack.IgnorePlugin(/webpack-stats\.json$/),
     new webpack.DefinePlugin({
       __CLIENT__: true,

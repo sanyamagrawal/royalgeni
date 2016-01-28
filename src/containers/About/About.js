@@ -6,7 +6,7 @@ export default class About extends Component {
   render() {
     return (
       <div className="container">
-        <h1>Vendor Select</h1>
+        <h1>Vendor Page</h1>
         <Helmet title="Vendor"/>
         <VendorSelect />
         <VendorData />

@@ -12,7 +12,6 @@ import { InfoBar } from 'components';
 import { pushState } from 'redux-router';
 import connectData from 'helpers/connectData';
 import config from '../../config';
-import './App.scss';
 
 function fetchData(getState, dispatch) {
   const promises = [];
@@ -58,7 +57,7 @@ export default class App extends Component {
 
   render() {
     const {user} = this.props;
-
+    require('./App.scss');
     return (
       <div className="app">
         <Helmet {...config.app.head}/>

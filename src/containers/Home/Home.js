@@ -3,12 +3,13 @@ import { Link } from 'react-router';
 import { CounterButton, GithubButton } from 'components';
 import config from '../../config';
 import Helmet from 'react-helmet';
-import './Home.scss';
 
 export default class Home extends Component {
   render() {
     // require the logo image both from client and server
     const logoImage = require('./logo.png');
+    require('./Home.scss');
+
     return (
       <div className="home">
         <Helmet title="Home"/>

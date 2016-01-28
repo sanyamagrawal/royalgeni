@@ -7,8 +7,6 @@ import {initializeWithKey} from 'redux-form';
 import connectData from 'helpers/connectData';
 import { WidgetForm } from 'components';
 
-import './Widgets.scss';
-
 function fetchDataDeferred(getState, dispatch) {
   if (!isLoaded(getState())) {
     return dispatch(loadWidgets());
@@ -41,6 +39,7 @@ export default class Widgets extends Component {
       return () => editStart(String(widget.id));
     };
     const {widgets, error, editing, loading, load} = this.props;
+    require('./Widgets.scss');
     let refreshClassName = 'fa fa-refresh';
     if (loading) {
       refreshClassName += ' fa-spin';

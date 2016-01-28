@@ -1,6 +1,5 @@
 import React from 'react';
 import Grid from 'react-datagrid';
-import './DataGrid.scss';
 
 class DataGrid extends React.Component {
 
@@ -15,9 +14,8 @@ class DataGrid extends React.Component {
     }
 
     render() {
-        return (<Grid idProperty={this.props.idProperty}
-                      dataSource={this.props.dataSource}
-                      columns={this.props.columns} />
+        require('./DataGrid.scss');
+        return (<Grid {...this.props}/>
         );
     }
 }
